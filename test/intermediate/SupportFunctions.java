@@ -1,8 +1,12 @@
 package intermediate;
 
 import java.io.File;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -46,6 +50,31 @@ public class SupportFunctions {
 		return driver;
 	}
 		
+	
+	public void selectOptionWithTextEquals(String textToSelect,String ids,String tag) {
+		try {
+			WebElement autoOptions = driver.findElement(By.id(ids));
+//			WebDriverWait wait=new WebDriverWait(driver, 5);
+//			wait.until(ExpectedConditions.visibilityOf(autoOptions));
+
+			List<WebElement> optionsToSelect = autoOptions.findElements(By.tagName(tag));
+			for(WebElement option : optionsToSelect){
+		        if(option.getText().equals(textToSelect)) {
+		        	System.out.println("Trying to select: "+textToSelect);
+		            option.click();
+		            break;
+		        }
+		    }
+			
+		} catch (NoSuchElementException e) {
+			System.out.println(e.getStackTrace());
+		}
+		catch (Exception e) {
+			System.out.println(e.getStackTrace());
+		}
+	}
+
+
 	
 	
 }

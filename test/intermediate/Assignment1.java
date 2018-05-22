@@ -50,8 +50,7 @@ public void setUp() throws Exception {
   
 //  @Test(dataProvider="EACData")
   @Test
-  public void testCrossFinal
-  		  (String contractNo) throws Exception {
+  public void testCrossFinal() throws Exception {
 	  
 		iterator++;  
 	  String url="http://demoqa.com/";
@@ -63,7 +62,29 @@ public void setUp() throws Exception {
 	  driver.findElement(By.xpath("//*[@id='name_3_lastname']")).sendKeys("abc");
 	  driver.findElement(By.xpath("//*[@id='pie_register']/li[2]/div/div/input[1]")).click();
 	  driver.findElement(By.xpath("//*[@id='pie_register']/li[3]/div/div[1]/input[1]")).click();
+	  driver.findElement(By.xpath("//*[@id='dropdown_7']")).click();
+	  others.selectOptionWithTextEquals("Algeria", "dropdown_7", "option");
 	 
+	  driver.findElement(By.xpath("//*[@id='mm_date_8']")).click();
+	  others.selectOptionWithTextEquals("2", "mm_date_8", "option");	  
+	  driver.findElement(By.xpath("//*[@id='dd_date_8']")).click();
+	  others.selectOptionWithTextEquals("1", "dd_date_8", "option");	  
+	  driver.findElement(By.xpath("//*[@id='yy_date_8']")).click();
+	  others.selectOptionWithTextEquals("1994", "yy_date_8", "option");	  
+	  
+	  driver.findElement(By.xpath("//*[@id='phone_9']")).sendKeys("0896532147");
+	  driver.findElement(By.xpath("//*[@id='username']")).sendKeys("akhil7000");
+	  driver.findElement(By.xpath("//*[@id='email_1']")).sendKeys("ak@ls.com");
+	  driver.findElement(By.xpath("//*[@id='profile_pic_10']")).sendKeys("C:\\Users\\Public\\Pictures\\Sample Pictures\\Penguins.jpg");
+	  driver.findElement(By.xpath("//*[@id='description']")).sendKeys("yolo");
+	  driver.findElement(By.xpath("//*[@id='password_2']")).sendKeys("password");
+	  driver.findElement(By.xpath("//*[@id='confirm_password_password_2']")).sendKeys("password");
+	  
+	  String passwordStrength = driver.findElement(By.xpath("//*[@id='piereg_passwordStrength']")).getText();
+//	  Assert.assertEquals(passwordStrength,"Very weak" || "");
+
+	  
+	  
 
     
 }
