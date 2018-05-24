@@ -6,6 +6,6 @@
 	<classpathentry kind="lib" path="lib/jxl.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-java-2.53.1.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
-	<classpathentry kind="lib" path="lib/testng-6.9.10.jar"/>
+	<classpathentry kind="lib" path="lib/testng-6.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
