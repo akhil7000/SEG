@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<img src="file://C:\Users\Akhil\AppData\Local\Temp\screenshot1142114672507612263.png" alt=""/>]]>
+    </line>
+    <line>
+      <![CDATA[<img src="file://C:\Users\Akhil\AppData\Local\Temp\screenshot8540951520304371806.png" alt=""/>]]>
+    </line>
+    <line>
+      <![CDATA[<img src="file://C:\Users\Akhil\AppData\Local\Temp\screenshot3385591755618132524.png" alt=""/>]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="33549" started-at="2018-05-24T18:07:28Z" finished-at="2018-05-24T18:08:02Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="33549" started-at="2018-05-24T18:07:28Z" finished-at="2018-05-24T18:08:02Z">
+      <class name="intermediate.assignment2.Test1">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="4828" started-at="2018-05-24T18:07:28Z" finished-at="2018-05-24T18:07:33Z">
+        </test-method>
+        <test-method status="PASS" signature="testCrossFinal()" name="testCrossFinal" duration-ms="28707" started-at="2018-05-24T18:07:33Z" finished-at="2018-05-24T18:08:02Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)" name="tearDown" is-config="true" duration-ms="3" started-at="2018-05-24T18:08:02Z" finished-at="2018-05-24T18:08:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult: testCrossFinal STATUS:SUCCESS METHOD:intermediate.assignment2.Test1.testCrossFinal()<img src="file://C:\Users\Akhil\AppData\Local\Temp\screenshot1142114672507612263.png" alt=""/>]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
