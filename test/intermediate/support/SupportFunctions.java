@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -173,8 +171,7 @@ public class SupportFunctions {
 				}
 				  Reporter.log("Test Step No : "+stepNo);
 				  Reporter.log("Result : "+result);
-				  String path = "<img src=\"file:\\" + filePath + "\" alt=\"\"/>";
-				  Reporter.log(("<img src=\"file://" + filePath + "\" alt=\"\"/></img>"));
+				  Reporter.log(("<img src=\"file://" + filePath + "\" alt=\"\"/ height=\"445\" width=\"655\"></img>"));
 				  Reporter.log("<br />");			
 		}
 
