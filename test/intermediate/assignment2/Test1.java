@@ -1,89 +1,79 @@
 package intermediate.assignment2;
 
+import intermediate.support.Constants;
 import intermediate.support.SupportFunctions;
 
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-
-
+/**************************************************************************************************
+ * Assignment2-Test1
+ * 
+ *************************************************************************************************/
 public class Test1 {
-	String ab="";
   private WebDriver driver;
   SupportFunctions others;
-  int iterator=0;
-  private boolean acceptNextAlert = true;
+  Properties obj = new Properties();
   private StringBuffer verificationErrors = new StringBuffer();
 
-  @BeforeMethod
+ @BeforeMethod
 public void setUp() throws Exception {
-	  others=new SupportFunctions(driver);
-	  
-//	  driver=others.startFirefox();
-	driver=others.startChrome();
-//	  driver=others.startIE();
-	  
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    driver.manage().window().maximize();
-
+	 others=new SupportFunctions(driver);
+	 driver=others.startChrome();	  
+	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	 driver.manage().window().maximize();
   }
 
-    @Test
-  public void testCrossFinal() throws Exception {
+  @DataProvider(name = "Assignment2_data")
+  public Object[][] createData1() {
+	  others=new SupportFunctions(driver);
+      Object[][] retObjArr=others.getTableArray(Constants.Path_TestData_Assignment2, Constants.Path_TestData_SheetName, 
+    		  									Constants.Path_TestData_Delimiter);
+      return(retObjArr);
+  }
+  
+  @Test(dataProvider="Assignment2_data")
+  public void testCrossFinal(String searchKeyword,String expectedSearchResult1,String expectedSearchResult2,
+		  						String expectedSearchResult3) throws Exception {
 	  
-	  String url="http://www.globalsqa.com/demo-site/frames-and-windows/#iFrame";
-	  
-	  driver.get(url);
-	  others.frameSwitcher("no", "globalSqa");
-	  driver.findElement(By.xpath("//*[@id='s']")).sendKeys("jmeter");
-	  driver.findElement(By.xpath("//*[@id='subheader']/div/div/div[1]/form/button")).click();
-	  
-	  others.CaptureScreenshot(1);
-	  
-	  
-	  others.waitUntilElementGetsValueEquals("//*[@id='wrapper']/div[1]/div[1]/div/div/div/div[2]/h1", "Search results for: jmeter");
-	  String result1=driver.findElement(By.xpath("//*[@id='wrapper']/div[1]/div[2]/div/div[2]/ol/li[1]/div/h3")).getText();
-	  
-	  String result2=driver.findElement(By.xpath("//*[@id='wrapper']/div[1]/div[2]/div/div[2]/ol/li[2]/div/h3/a")).getText();
-	  
-	  Assert.assertEquals(result1, "JMeter (minimax_tabs)", "Test failed as result 1 is not matching");
-	  Assert.assertEquals(result2, "JMeter Training", "Test failed as result 1 is not matching");
-	  others.CaptureScreenshot(2);
-	  
-	  driver.findElement(By.xpath("//*[@id='wrapper']/div[1]/div[2]/div/div[2]/ol/li[1]/div/h3/a")).click();
-    
-	  others.waitUntilElementGetsValueEquals("//*[@id='post-2194']/div/div/div[1]/h2", "Apache Jmeter Quiz");
-	  others.CaptureScreenshot(3);
-
+	  FileInputStream objfile = new FileInputStream(Constants.Path_OR);
+	  obj.load(objfile);
+	  driver.get(obj.getProperty("assignment2Url"));
+	  others.frameSwitcher("no", obj.getProperty("frame_destination"));
+	  driver.findElement(By.xpath(obj.getProperty("txt_search"))).sendKeys(searchKeyword);
+	  driver.findElement(By.xpath(obj.getProperty("btn_search"))).click();
+	  others.waitUntilElementGetsValueEquals(obj.getProperty("ele_searchResultTitle"),obj.getProperty("ele_searchResultTitleWord"));
+	  String result1=driver.findElement(By.xpath(obj.getProperty("ele_searchResult_1"))).getText();
+	  String result2=driver.findElement(By.xpath(obj.getProperty("ele_searchResult_2"))).getText();
+	  Assert.assertEquals(result1, expectedSearchResult1, "Test failed as result 1 is not matching");
+	  Assert.assertEquals(result2, expectedSearchResult2, "Test failed as result 2 is not matching");
+	  others.testStep("Passed");	
+	  driver.findElement(By.xpath(obj.getProperty("ele_searchResult_1"))).click();
+	  others.waitUntilElementGetsValueEquals(obj.getProperty("ele_jmeterQuiz"), expectedSearchResult3);
+	  others.testStep("Passed");
 }
 
   @AfterMethod
 public void tearDown(ITestResult result) throws Exception {
-	  	  
-    //driver.quit();
+	  if(result.getStatus()==ITestResult.FAILURE){
+		  others.testStep("Failed");
+	  }
+  	driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       Assert.fail(verificationErrorString);
     }
   }
-
-
 
 }
 

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="Akhil-PC" name="intermediate.assignment2.Test1" tests="1" failures="0" timestamp="24 May 2018 12:36:42 GMT" time="29.191" errors="0">
-  <testcase name="testCrossFinal" time="23.46" classname="intermediate.assignment2.Test1"/>
+<testsuite hostname="Akhil-PC" name="intermediate.assignment2.Test1" tests="1" failures="0" timestamp="27 May 2018 20:01:30 GMT" time="30.8" errors="0">
+  <testcase name="testCrossFinal" time="25.428" classname="intermediate.assignment2.Test1"/>
 </testsuite>

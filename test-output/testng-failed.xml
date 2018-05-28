@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testCrossFinal"/>
+          <include name="testCrossFinal" invocation-numbers="0"/>
         </methods>
       </class>
     </classes>
