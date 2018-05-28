@@ -1,22 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
+    <line>
+      <![CDATA[Test Step No : 1]]>
+    </line>
+    <line>
+      <![CDATA[Result : Passed]]>
+    </line>
+    <line>
+      <![CDATA[<img src="file://C:\Users\Akhil\git\SEG\test\intermediate\screenshots\1.png" alt=""/ height="445" width="655"></img>]]>
+    </line>
+    <line>
+      <![CDATA[<br />]]>
+    </line>
+    <line>
+      <![CDATA[Test Step No : 2]]>
+    </line>
+    <line>
+      <![CDATA[Result : Passed]]>
+    </line>
+    <line>
+      <![CDATA[<img src="file://C:\Users\Akhil\git\SEG\test\intermediate\screenshots\2.png" alt=""/ height="445" width="655"></img>]]>
+    </line>
+    <line>
+      <![CDATA[<br />]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54647" started-at="2018-05-28T11:27:37Z" finished-at="2018-05-28T11:28:32Z">
+  <suite name="Suite" duration-ms="45837" started-at="2018-05-28T11:44:54Z" finished-at="2018-05-28T11:45:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54647" started-at="2018-05-28T11:27:37Z" finished-at="2018-05-28T11:28:32Z">
-      <class name="intermediate.assignment1.Test2">
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="35545" started-at="2018-05-28T11:27:38Z" finished-at="2018-05-28T11:28:13Z">
+    <test name="Test" duration-ms="45837" started-at="2018-05-28T11:44:54Z" finished-at="2018-05-28T11:45:40Z">
+      <class name="intermediate.assignment2.Test1">
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="16980" started-at="2018-05-28T11:44:54Z" finished-at="2018-05-28T11:45:11Z">
         </test-method>
-        <test-method status="PASS" signature="testCrossFinal()" name="testCrossFinal" duration-ms="18820" started-at="2018-05-28T11:28:13Z" finished-at="2018-05-28T11:28:32Z">
-        </test-method>
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)" name="tearDown" is-config="true" duration-ms="1" started-at="2018-05-28T11:28:32Z" finished-at="2018-05-28T11:28:32Z">
+        <test-method status="PASS" signature="testCrossFinal(java.lang.String, java.lang.String, java.lang.String, java.lang.String)" name="testCrossFinal" duration-ms="26155" started-at="2018-05-28T11:45:11Z" finished-at="2018-05-28T11:45:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult: testCrossFinal STATUS:SUCCESS METHOD:intermediate.assignment1.Test2.testCrossFinal()]
-]]>
+                <![CDATA[jmeter]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[JMeter]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[JMeter Training]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Apache Jmeter Quiz]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)" name="tearDown" is-config="true" duration-ms="2469" started-at="2018-05-28T11:45:37Z" finished-at="2018-05-28T11:45:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult: testCrossFinal STATUS:SUCCESS METHOD:intermediate.assignment2.Test1.testCrossFinal(java.lang.String, java.lang.String, java.lang.String, java.lang.String)Test Step No : 1]]>
               </value>
             </param>
           </params>
